@@ -1,6 +1,6 @@
 [package]
 name = "ekg-rs-workspace"
-version = "0.0.19"
+version = "0.0.20"
 edition = "2024"
 publish = false
 build = "build.rs"
@@ -17,7 +17,7 @@ repository = "https://github.com/dataroadinc/ekg-rs"
 readme = "./README.md"
 keywords = ["ekg", "knowledge-graph", "rdf", "aws"]
 description = "Various utility Rust crates for Enterprise Knowledge Graph (EKG) architecture"
-version = "0.0.19"
+version = "0.0.20"
 rust-version = "1.92.0"
 edition = "2024"
 authors = ["Jacobus Geluk <jacobus.geluk@dataroad.com>"]
@@ -55,11 +55,11 @@ opt-level = 'z'
 #
 # Local crates
 #
-ekg-error = { path = "crate/ekg-error", version = "0.0.19" }
-ekg-identifier = { path = "crate/ekg-identifier", version = "0.0.19" }
-ekg-metadata = { path = "crate/ekg-metadata", version = "0.0.19" }
-ekg-sparql = { path = "crate/ekg-sparql", version = "0.0.19" }
-ekg-util = { path = "crate/ekg-util", version = "0.0.19" }
+ekg-error = { path = "crate/ekg-error", version = "0.0.20" }
+ekg-identifier = { path = "crate/ekg-identifier", version = "0.0.20" }
+ekg-metadata = { path = "crate/ekg-metadata", version = "0.0.20" }
+ekg-sparql = { path = "crate/ekg-sparql", version = "0.0.20" }
+ekg-util = { path = "crate/ekg-util", version = "0.0.20" }
 #
 # Tracing & Logging
 #
