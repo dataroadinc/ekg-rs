@@ -13,7 +13,7 @@ members = ["crate/*"]
 resolver = "3"
 
 [workspace.package]
-repository = "git@github.com:dataroadinc/ekg-rs.git"
+repository = "https://github.com/dataroadinc/ekg-rs"
 readme = "./README.md"
 keywords = ["ekg", "knowledge-graph", "rdf", "aws"]
 description = "Various utility Rust crates for Enterprise Knowledge Graph (EKG) architecture"
