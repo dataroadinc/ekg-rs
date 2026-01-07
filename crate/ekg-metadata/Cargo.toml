@@ -38,3 +38,7 @@ test-log.workspace = true
 serde = ["ekg-error/serde", "dep:serde", "dep:serde_json"]
 oxigraph-support = ["dep:oxrdf"]
 rdfox-support = ["ekg-error/rdfox-support"]
+rdfox-dylib = ["ekg-error/rdfox-dylib"]
+rdfox-static = ["ekg-error/rdfox-static"]
+rdfox-7-0a = ["ekg-error/rdfox-7-0a"]
+rdfox-7-2a = ["ekg-error/rdfox-7-2a"]
