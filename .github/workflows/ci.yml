@@ -1,0 +1,204 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  # Check code formatting
+  fmt:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rustfmt
+      - name: Check formatting
+        run: cargo +nightly fmt --all -- --check
+
+  # Run clippy linting
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: clippy
+      - name: Cache cargo registry
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache cargo index
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/git
+          key: ${{ runner.os }}-cargo-git-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache target directory
+        uses: actions/cache@v4
+        with:
+          path: target
+          key: ${{ runner.os }}-target-clippy-${{ hashFiles('**/Cargo.lock') }}
+      - name: Run clippy
+        run: cargo +nightly clippy --workspace --all-targets --all-features -- -D warnings
+
+  # Run tests
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        rust: [stable]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.rust }}
+      - name: Cache cargo registry
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache cargo index
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/git
+          key: ${{ runner.os }}-cargo-git-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache target directory
+        uses: actions/cache@v4
+        with:
+          path: target
+          key: ${{ runner.os }}-${{ matrix.rust }}-target-test-${{ hashFiles('**/Cargo.lock') }}
+      - name: Run tests
+        run: cargo test --workspace
+      - name: Run doc tests
+        run: cargo test --workspace --doc
+
+  # Detect version changes and prepare for release
+  version-check:
+    name: Check Version
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    outputs:
+      version_changed: ${{ steps.version.outputs.changed }}
+      new_version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get current version from Cargo.toml
+        id: cargo_version
+        run: |
+          VERSION=$(grep '^version' Cargo.toml | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Current Cargo.toml version: $VERSION"
+      - name: Get latest git tag
+        id: latest_tag
+        run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          LATEST_VERSION=${LATEST_TAG#v}
+          echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          echo "Latest git tag version: $LATEST_VERSION"
+      - name: Compare versions
+        id: version
+        run: |
+          CARGO_VERSION="${{ steps.cargo_version.outputs.version }}"
+          TAG_VERSION="${{ steps.latest_tag.outputs.version }}"
+
+          if [ "$CARGO_VERSION" != "$TAG_VERSION" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "version=$CARGO_VERSION" >> $GITHUB_OUTPUT
+            echo "✅ Version changed: $TAG_VERSION -> $CARGO_VERSION"
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  Version unchanged: $CARGO_VERSION"
+          fi
+
+  # Release: Tag, Changelog, GitHub Release, and Publish
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [fmt, clippy, test, version-check]
+    if: needs.version-check.outputs.version_changed == 'true'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Setup Cocogitto
+        uses: ./.github/actions/setup-cocogitto
+
+      - name: Ensure Release Tag Exists
+        run: |
+          VERSION="${{ needs.version-check.outputs.new_version }}"
+          TAG="v$VERSION"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists."
+          else
+            git tag -a "$TAG" -m "Release $TAG"
+            echo "Created tag $TAG on HEAD."
+          fi
+
+      - name: Generate Changelog with Cocogitto
+        id: changelog
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          cog changelog --at v${{ needs.version-check.outputs.new_version }} > CHANGELOG.md
+
+      - name: Save Changelog to File
+        run: |
+          cat CHANGELOG.md
+          echo "Changelog generated for v${{ needs.version-check.outputs.new_version }}"
+
+      - name: Push Release Tag
+        run: |
+          VERSION="${{ needs.version-check.outputs.new_version }}"
+          git push origin "v$VERSION"
+          echo "✅ Pushed tag v$VERSION"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ needs.version-check.outputs.new_version }}
+          name: v${{ needs.version-check.outputs.new_version }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Publish workspace crates to crates.io
+        run: |
+          # Publish all workspace members
+          for crate in crate/*/; do
+            if [ -f "$crate/Cargo.toml" ]; then
+              echo "Publishing crate in $crate"
+              cargo publish --manifest-path "$crate/Cargo.toml" --token ${{ secrets.CRATES_IO }} || true
+            fi
+          done
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO }}
+
+      - name: Release Summary
+        run: |
+          echo "🎉 Successfully released v${{ needs.version-check.outputs.new_version }}"
+          echo "📝 GitHub Release: https://github.com/${{ github.repository }}/releases/tag/v${{ needs.version-check.outputs.new_version }}"
