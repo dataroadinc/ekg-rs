@@ -1,0 +1,93 @@
+name: Setup cargo-version-info
+description: Install cargo-version-info with caching for version management
+
+runs:
+  using: composite
+  steps:
+    - name: Setup cargo-binstall
+      uses: ./.github/actions/setup-cargo-binstall
+
+    - name: Ensure cargo bin directory exists
+      shell: bash
+      run: mkdir -p "$HOME/.cargo/bin"
+
+    - name: Add cargo bin to PATH
+      shell: bash
+      run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+    - name: Cache cargo-version-info binary
+      uses: actions/cache@v4
+      id: cache-cargo-version-info
+      with:
+        path: ~/.cargo/bin/cargo-version-info${{ runner.os == 'Windows' && '.exe' || '' }}
+        key: cargo-version-info-latest-${{ runner.os }}-${{ runner.arch }}
+
+    - name: Install cargo-version-info if not cached
+      if: steps.cache-cargo-version-info.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        echo "Installing cargo-version-info via cargo-binstall..."
+        CARGO_VERSION_INFO_BIN="$HOME/.cargo/bin/cargo-version-info"${{ runner.os == 'Windows' && '.exe' || '' }}
+
+        # Check if binary already exists (from previous run or cache)
+        if [ -f "$CARGO_VERSION_INFO_BIN" ]; then
+          echo "✓ cargo-version-info binary already exists at $CARGO_VERSION_INFO_BIN"
+          chmod +x "$CARGO_VERSION_INFO_BIN"
+        else
+          # Binary doesn't exist, install it
+          echo "Binary not found, installing cargo-version-info..."
+          cargo binstall --no-confirm cargo-version-info
+
+          # Verify binary exists and make it executable
+          if [ -f "$CARGO_VERSION_INFO_BIN" ]; then
+            chmod +x "$CARGO_VERSION_INFO_BIN"
+            echo "✓ cargo-version-info installed and made executable"
+          else
+            echo "❌ Error: Binary not found at $CARGO_VERSION_INFO_BIN after installation"
+            echo "Checking cargo bin directory:"
+            ls -la "$HOME/.cargo/bin/" || echo "Directory does not exist"
+            echo "Checking if cargo-version-info is in PATH:"
+            which cargo-version-info || echo "cargo-version-info not in PATH"
+            exit 1
+          fi
+        fi
+
+    - name: Ensure cached binary is executable or install
+      if: steps.cache-cargo-version-info.outputs.cache-hit == 'true'
+      shell: bash
+      run: |
+        CARGO_VERSION_INFO_BIN="$HOME/.cargo/bin/cargo-version-info"${{ runner.os == 'Windows' && '.exe' || '' }}
+        if [ -f "$CARGO_VERSION_INFO_BIN" ]; then
+          chmod +x "$CARGO_VERSION_INFO_BIN"
+          echo "✓ Ensured cached cargo-version-info binary is executable"
+        else
+          echo "⚠ Cached binary not found at $CARGO_VERSION_INFO_BIN, installing..."
+          cargo binstall --no-confirm cargo-version-info
+
+          # Verify binary exists and make it executable
+          if [ -f "$CARGO_VERSION_INFO_BIN" ]; then
+            chmod +x "$CARGO_VERSION_INFO_BIN"
+            echo "✓ cargo-version-info installed and made executable"
+          else
+            echo "❌ Error: Binary not found at $CARGO_VERSION_INFO_BIN after installation"
+            echo "Checking cargo bin directory:"
+            ls -la "$HOME/.cargo/bin/" || echo "Directory does not exist"
+            echo "Checking if cargo-version-info is in PATH:"
+            which cargo-version-info || echo "cargo-version-info not in PATH"
+            exit 1
+          fi
+        fi
+
+    - name: Verify installation
+      shell: bash
+      run: |
+        CARGO_VERSION_INFO_BIN="$HOME/.cargo/bin/cargo-version-info"${{ runner.os == 'Windows' && '.exe' || '' }}
+        if [ -f "$CARGO_VERSION_INFO_BIN" ]; then
+          "$CARGO_VERSION_INFO_BIN" --version
+        else
+          echo "Error: cargo-version-info binary not found at $CARGO_VERSION_INFO_BIN"
+          echo "Checking PATH: $PATH"
+          echo "Checking cargo bin directory:"
+          ls -la "$HOME/.cargo/bin/" || echo "Directory does not exist"
+          exit 1
+        fi
