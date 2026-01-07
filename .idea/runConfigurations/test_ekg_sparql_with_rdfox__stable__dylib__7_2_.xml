@@ -1,10 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test prefixes::tests::test_default_namespaces (with rdfox)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-    <option name="command" value="test --package ekg-sparql --lib prefixes::tests::test_default_namespaces --no-default-features --features rdfox-dylib,fs -- --exact --nocapture" />
+  <configuration default="false" name="test ekg-sparql with rdfox (stable, dylib, 7.2)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <option name="command" value="test --manifest-path crate/ekg-sparql/Cargo.toml --features rdfox-dylib,rdfox-7-2,fs" />
     <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-    <envs>
-      <env name="RUST_LOG" value="trace" />
-    </envs>
+    <envs />
     <option name="emulateTerminal" value="true" />
     <option name="channel" value="STABLE" />
     <option name="requiredFeatures" value="false" />

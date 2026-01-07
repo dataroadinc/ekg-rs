@@ -1,10 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test workspace without RDFox and with fs" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-    <option name="command" value="test --workspace --no-default-features --features fs -- --exact" />
+  <configuration default="false" name="build ekg-sparql with rdfox (nightly,dylib,7.2)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <option name="command" value="build --manifest-path crate/ekg-sparql/Cargo.toml --features rdfox-dylib,rdfox-7-2,fs" />
     <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-    <envs>
-      <env name="RUST_LOG" value="debug" />
-    </envs>
+    <envs />
     <option name="emulateTerminal" value="true" />
     <option name="channel" value="NIGHTLY" />
     <option name="requiredFeatures" value="false" />

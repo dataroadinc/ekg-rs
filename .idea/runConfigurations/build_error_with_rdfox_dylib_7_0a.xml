@@ -1,10 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test workspace without RDFox and without fs" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-    <option name="command" value="test --workspace --no-default-features -- --exact" />
+  <configuration default="false" name="build error with rdfox-dylib 7.0a" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <option name="command" value="build --manifest-path crate/ekg-error/Cargo.toml --features rdfox-dylib,rdfox-7-0a" />
     <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-    <envs>
-      <env name="RUST_LOG" value="debug" />
-    </envs>
+    <envs />
     <option name="emulateTerminal" value="true" />
     <option name="channel" value="NIGHTLY" />
     <option name="requiredFeatures" value="false" />
