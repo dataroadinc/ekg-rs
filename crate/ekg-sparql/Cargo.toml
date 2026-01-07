@@ -20,7 +20,6 @@ mime.workspace = true
 [target.'cfg(not(target_family = "wasm"))'.dependencies]
 ekg-identifier.workspace = true
 ekg-metadata.workspace = true
-ekg-error = { workspace = true, features = ["sparql"] }
 ekg-util.workspace = true
 tracing.workspace = true
 lazy_static.workspace = true
@@ -28,39 +27,43 @@ serde_json.workspace = true
 serde_urlencoded.workspace = true
 indoc.workspace = true
 fancy-regex.workspace = true
+http-body-util.workspace = true
+hyper.workspace = true
+hyper-util.workspace = true
+hyper-rustls.workspace = true
+spargebra.workspace = true
+ekg-error = { workspace = true, features = ["sparql"] }
 r2d2 = { workspace = true, optional = true }
 owo-colors = { workspace = true, optional = true }
 ignore = { workspace = true, optional = true }
 rdfox-sys = { workspace = true, optional = true }
-hyper.workspace = true
-hyper-rustls.workspace = true
-spargebra.workspace = true
 
 [target.'cfg(not(target_family = "wasm"))'.dev-dependencies]
 test-log.workspace = true
 tokio.workspace = true
 
 [features]
-default = ["rdfox-7-0a", "rdfox-dylib", "fs"]
+default = ["no-wasm"]
+wasm = []
+no-wasm = ["fs"]
+# fs = file system support (not available in browser WASM)
+fs = ["ekg-error/fs", "dep:ignore"]
+oxigraph-support = ["ekg-error/oxigraph-support"]
+
 _rdfox = [
-    "rdfox-7-0a",
-    "ekg-error/rdfox-support",
     "dep:rdfox-sys",
     "dep:r2d2",
     "dep:owo-colors",
 ]
-fs = ["ekg-error/fs", "dep:ignore"]
 #
-# Switch on if you want to link to `libRDFox.dylib` rather than `libRDFox.a`
+# Use features "rdfox-<version>" and "rdfox-dylib" if you want to link
+# to `libRDFox.dylib` rather than `libRDFox.a`, otherwise use "rdfox-<version>" and "rdfox-static"
 #
-rdfox-dylib = ["_rdfox", "rdfox-sys/rdfox-dylib"]
-rdfox-static = ["_rdfox"]
-rdfox-default = ["rdfox-7-0a", "rdfox-dylib"]
+rdfox-dylib = ["_rdfox", "rdfox-sys/rdfox-dylib", "ekg-error/rdfox-dylib", "ekg-metadata/rdfox-dylib"]
+rdfox-static = ["_rdfox", "rdfox-sys/rdfox-static", "ekg-error/rdfox-static", "ekg-metadata/rdfox-static"]
 #
 # Select a version
 #
-rdfox-6-2 = ["rdfox-sys/rdfox-6-2"]
-rdfox-6-3a = ["rdfox-sys/rdfox-6-3a"]
-rdfox-6-3b = ["rdfox-sys/rdfox-6-3b"]
-rdfox-7-0a = ["rdfox-sys/rdfox-7-0a"]
+rdfox-7-0a = ["rdfox-sys/rdfox-7-0a", "ekg-error/rdfox-7-0a", "ekg-metadata/rdfox-7-0a"]
+rdfox-7-2a = ["rdfox-sys/rdfox-7-2a", "ekg-error/rdfox-7-2a", "ekg-metadata/rdfox-7-2a"]
 
