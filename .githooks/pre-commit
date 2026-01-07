@@ -1,5 +1,4 @@
 #!/bin/sh
-# shellcheck disable=SC1091
 . "$(dirname "$0")/_/sloughi.sh"
 
 echo "Running Sloughi pre-commit..."
