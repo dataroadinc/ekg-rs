@@ -1,11 +1,5 @@
-ifndef GIT_ROOT
-GIT_ROOT := $(shell git rev-parse --show-toplevel 2>/dev/null)
-endif
-
-MK_DIR := $(GIT_ROOT)/.make
-
--include $(GIT_ROOT)/ekgf-make.mk
+CARGO_BIN := cargo
 
 .PHONY: build
-build: cargo-check
+build:
 	$(CARGO_BIN) build
