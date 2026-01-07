@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="CargoProjectFeatures">
+    <cargoProject file="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$/crate/ekg-sparql">
+        <feature name="rdfox-7-0a" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="763ca9d9-5f88-49d7-acee-94b45b123380" name="Changes" comment="feat: made `Class` comparable and cloneable">
+      <change beforePath="$PROJECT_DIR$/.cargo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Test_workspace_with_RDFox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test_workspace_with_RDFox.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/build_error_with_rdfox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/build_error_with_rdfox_dylib_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rustfmt.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.rustfmt.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-error/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-error/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-error/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-error/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/consts/namespaces.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/consts/namespaces.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/ekg_identifier_context/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/ekg_identifier_context/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/a_box_base.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/a_box_base.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/namespace_iri.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/namespace_iri.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/owned.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/owned.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/t_box_base.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/iri/t_box_base.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-identifier/src/namespace.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-identifier/src/namespace.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/class.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/class.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/classes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/classes.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/predicates.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/consts/predicates.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/data_type.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/data_type.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/graph.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/graph.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/id_url_display.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/id_url_display.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/this.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/this.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/value.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/literal/value.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/predicate.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/predicate.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-metadata/src/term.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-metadata/src/term.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/client.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/builder.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/builder.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/handle.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/handle.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/this.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/parameters/this.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/parser/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/parser/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/persistence_mode.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/persistence_mode.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/builder.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/builder.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/declare_result.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/declare_result.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/handle.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/handle.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/this.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes/this.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/class_report.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/class_report.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/connectable_data_store.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/connectable_data_store.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/cursor.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/cursor.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/cursor_row.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/cursor_row.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/opened_cursor.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/cursor/opened_cursor.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/data_store.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/data_store.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/datastore_connection.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/datastore_connection.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/graph_connection.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/graph_connection.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/role_creds.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/role_creds.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/server.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/server_connection/connection.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/server_connection/connection.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/streamer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/streamer.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/transaction.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/transaction.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/statement/statement_type.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/statement/statement_type.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/statement/this.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/statement/this.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/src/tests.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/src/tests.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/tests/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/tests/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-sparql/tests/rdfox_tests.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-sparql/tests/rdfox_tests.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/src/env.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/src/env.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/src/log/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/src/log/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/src/serde_util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/src/serde_util.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crate/ekg-util/src/tls_connector.rs" beforeDir="false" afterPath="$PROJECT_DIR$/crate/ekg-util/src/tls_connector.rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jgeluk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:EKGF/ekg-rs.git&quot;,
+    &quot;accountId&quot;: &quot;5abd6e65-5f91-4148-b0bc-f12db1672d95&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/hyper-1.5.0/src/client/conn/http1.rs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/hyper-1.5.0/src/lib.rs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="t1zzygku" />
+  </component>
+  <component name="Make.Settings">
+    <option name="path" value="/opt/homebrew/bin/gmake" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2baK4ljRm4T4l5GnnLwd5XQfsvR" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Cargo.Build `test`.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test WASM.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::id_url_display::tests::test_01.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_as_local_name_02.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_01.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_02.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_03.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_04.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_05.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_06.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_07.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_deserialize_08.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_id_url_01.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test literal::tests::test_id_url_02.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test load_rdfox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test namespace::tests::test_iri_string.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test parameters::tests::test_set_param.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test predicate::tests::test_predicate.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test prefixes::tests::test_default_namespaces (with rdfox).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test prefixes::tests::test_default_namespaces.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test rdfox::parameters::tests::test_set_param.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test statement::tests::test_embedded_param.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test term::tests::test_term_01.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test term::tests::test_term_03 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test term::tests::test_term_03.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create_data_store_connection.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create_server (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create_server.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create_server_connection.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_define_data_store (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_define_data_store.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test tests::test_sparql_client.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test workspace with RDFox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test workspace without RDFox and with fs.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test workspace without RDFox and without fs.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test workspace without RDFox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Tree workspace without RDFox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build ekg-sparql with oxigraph.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build ekg-sparql with rdfox (nightly).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build ekg-sparql with rdfox (nightly,dylib,7.2).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build ekg-sparql with rdfox (stable).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build ekg-sparql with rdfox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build error with rdfox-dylib 7.0a.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build error with rdfox-dylib 7.2.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build error with rdfox.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.build.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.test ekg-sparql with rdfox (nightly).executor&quot;: &quot;Debug&quot;,
+    &quot;Cargo.test ekg-sparql with rdfox (stable).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.test ekg-sparql with rdfox (stable, dylib, 7.2).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.test.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.build-release.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.build.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jgeluk/Work/ekg-rs/crate/ekg-util/src/iri&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects.stats&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.rustfmt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/crate/ekg-util/src/iri" />
+      <recent name="$PROJECT_DIR$/crate/ekg-sparql/src/prefixes" />
+      <recent name="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox/parameters" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/crate/ekg-sparql/src/rdfox" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/crate/ekg-sparql/src" />
+      <recent name="$PROJECT_DIR$/crate/ekg-sparql/src/statement" />
+      <recent name="$PROJECT_DIR$/crate/ekg-util/src" />
+      <recent name="$PROJECT_DIR$/crate/ekg-identifier/src/consts" />
+      <recent name="$PROJECT_DIR$/crate/ekg-identifier/src" />
+    </key>
+  </component>
+  <component name="RsExternalLinterProjectSettings">
+    <option name="channel" value="nightly" />
+    <option name="runOnTheFly" value="true" />
+    <option name="tool" value="Clippy" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="cargo test --workspace" />
+      <command value="cargo build --workspace" />
+      <command value="cargo build" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Cargo.build ekg-sparql with oxigraph">
+    <configuration name="Test literal::id_url_display::tests::test_01" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ekg-metadata --lib literal::id_url_display::tests::test_01 -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test namespace::tests::test_iri_string" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ekg-identifier --lib namespace::tests::test_iri_string -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test parameters::tests::test_set_param" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ekg-sparql --lib parameters::tests::test_set_param --no-default-features --features  fs -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="NIGHTLY" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test statement::tests::test_embedded_param" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ekg-sparql --lib statement::tests::test_embedded_param -- --exact --nocapture" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="NIGHTLY" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test_define_data_store (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ekg-sparql --test rdffox_tests test_define_data_store -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cargo.Test literal::id_url_display::tests::test_01" />
+      <item itemvalue="Cargo.Test namespace::tests::test_iri_string" />
+      <item itemvalue="Cargo.Test parameters::tests::test_set_param" />
+      <item itemvalue="Cargo.Test statement::tests::test_embedded_param" />
+      <item itemvalue="Cargo.Test test_define_data_store (1)" />
+      <item itemvalue="Cargo.build error with rdfox-dylib 7.2" />
+      <item itemvalue="Cargo.Test prefixes::tests::test_default_namespaces (without rdfox)" />
+      <item itemvalue="Cargo.test ekg-sparql with rdfox (stable, dylib, 7.2)" />
+      <item itemvalue="Cargo.build ekg-sparql with oxigraph" />
+      <item itemvalue="Cargo.Test workspace without RDFox and with fs" />
+      <item itemvalue="Cargo.Test workspace with RDFox" />
+      <item itemvalue="Cargo.build error with rdfox-dylib 7.0a" />
+      <item itemvalue="Cargo.Test WASM" />
+      <item itemvalue="Cargo.Test prefixes::tests::test_default_namespaces (with rdfox)" />
+      <item itemvalue="Cargo.Test workspace without RDFox and without fs" />
+      <item itemvalue="Cargo.build ekg-sparql with rdfox (stable)" />
+      <item itemvalue="Cargo.build ekg-sparql with rdfox (nightly,dylib,7.2)" />
+      <item itemvalue="Cargo.test ekg-sparql with rdfox (nightly,dylib,7-2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test test_define_data_store (1)" />
+        <item itemvalue="Cargo.Test statement::tests::test_embedded_param" />
+        <item itemvalue="Cargo.Test parameters::tests::test_set_param" />
+        <item itemvalue="Cargo.Test namespace::tests::test_iri_string" />
+        <item itemvalue="Cargo.Test literal::id_url_display::tests::test_01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="RustfmtProjectSettings">
+    <option name="additionalArguments" value="+nightly --unstable-features --verbose" />
+    <option name="channel" value="nightly" />
+    <option name="useRustfmt" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="763ca9d9-5f88-49d7-acee-94b45b123380" name="Changes" comment="" />
+      <created>1706447560751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706447560751</updated>
+      <workItem from="1706447561779" duration="57150000" />
+      <workItem from="1706824142835" duration="107000" />
+      <workItem from="1706864689727" duration="21846000" />
+      <workItem from="1707135549998" duration="18525000" />
+      <workItem from="1707225805149" duration="193000" />
+      <workItem from="1707226005444" duration="171000" />
+      <workItem from="1707226186784" duration="52000" />
+      <workItem from="1707226252822" duration="5566000" />
+      <workItem from="1707236610823" duration="620000" />
+      <workItem from="1707237593675" duration="703000" />
+      <workItem from="1707238531750" duration="18576000" />
+      <workItem from="1707668717383" duration="220000" />
+      <workItem from="1707668994216" duration="70000" />
+      <workItem from="1707669099883" duration="606000" />
+      <workItem from="1707670278537" duration="9679000" />
+      <workItem from="1707734339944" duration="12890000" />
+      <workItem from="1707917951078" duration="7942000" />
+      <workItem from="1708099910153" duration="3034000" />
+      <workItem from="1708194969744" duration="27128000" />
+      <workItem from="1708688203466" duration="599000" />
+      <workItem from="1708937873264" duration="599000" />
+      <workItem from="1708948352886" duration="6398000" />
+      <workItem from="1709297727236" duration="588000" />
+      <workItem from="1709716532336" duration="595000" />
+      <workItem from="1710074199723" duration="19000" />
+      <workItem from="1710150677435" duration="595000" />
+      <workItem from="1710168343532" duration="598000" />
+      <workItem from="1710341399904" duration="599000" />
+      <workItem from="1710777798661" duration="175000" />
+      <workItem from="1710777989677" duration="598000" />
+      <workItem from="1710866551784" duration="3074000" />
+      <workItem from="1711124335176" duration="593000" />
+      <workItem from="1711201584596" duration="598000" />
+      <workItem from="1711205784757" duration="598000" />
+      <workItem from="1711455724865" duration="598000" />
+      <workItem from="1711555819408" duration="596000" />
+      <workItem from="1711903268888" duration="77000" />
+      <workItem from="1711903359028" duration="597000" />
+      <workItem from="1712132985444" duration="599000" />
+      <workItem from="1712403440984" duration="39000" />
+      <workItem from="1712741097370" duration="1249000" />
+      <workItem from="1713023370965" duration="33000" />
+      <workItem from="1713023939209" duration="3000" />
+      <workItem from="1717339989313" duration="20000" />
+      <workItem from="1717340022815" duration="832000" />
+      <workItem from="1723224279994" duration="98000" />
+      <workItem from="1723224387801" duration="4000" />
+      <workItem from="1723466494384" duration="598000" />
+      <workItem from="1725390785018" duration="17000" />
+      <workItem from="1729328620469" duration="63000" />
+      <workItem from="1729328764341" duration="1077000" />
+      <workItem from="1729329849898" duration="1229000" />
+      <workItem from="1729424717729" duration="33000" />
+      <workItem from="1729424765316" duration="317000" />
+      <workItem from="1729425968190" duration="14740000" />
+      <workItem from="1729901102721" duration="576000" />
+      <workItem from="1730714598245" duration="1187000" />
+      <workItem from="1730859911716" duration="3546000" />
+      <workItem from="1755622017739" duration="599000" />
+      <workItem from="1762689658434" duration="106000" />
+      <workItem from="1762689795198" duration="68000" />
+    </task>
+    <task id="LOCAL-00001" summary="chore: intitial commit">
+      <option name="closed" value="true" />
+      <created>1706448437942</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706448437942</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: initial commit">
+      <option name="closed" value="true" />
+      <created>1706448647779</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706448647779</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chore: preparing for publishing">
+      <option name="closed" value="true" />
+      <created>1706474320948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706474320948</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore: preparing for publishing">
+      <option name="closed" value="true" />
+      <created>1706475657228</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706475657228</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: preparing for publishing">
+      <option name="closed" value="true" />
+      <created>1706476297304</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706476297304</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: preparing for publishing">
+      <option name="closed" value="true" />
+      <created>1706476367712</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706476367712</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chore: merged features from rdf-store-rs">
+      <option name="closed" value="true" />
+      <created>1706535650042</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706535650042</updated>
+    </task>
+    <task id="LOCAL-00008" summary="chore: depending on rdftk crates now">
+      <option name="closed" value="true" />
+      <created>1706537449030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706537449030</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: minor changes">
+      <option name="closed" value="true" />
+      <created>1706561748747</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706561748748</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactor: massive refactor adding ekg-sparql crate">
+      <option name="closed" value="true" />
+      <created>1707991611089</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707991611089</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: massive refactor adding ekg-sparql crate">
+      <option name="closed" value="true" />
+      <created>1707991619029</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707991619029</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: massive refactor">
+      <option name="closed" value="true" />
+      <created>1708305671001</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708305671001</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: removed git reference for xlsxwriter">
+      <option name="closed" value="true" />
+      <created>1708305812050</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708305812050</updated>
+    </task>
+    <task id="LOCAL-00014" summary="refactor: removed version numbers for local crates">
+      <option name="closed" value="true" />
+      <created>1708305930985</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708305930985</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: changed the build order">
+      <option name="closed" value="true" />
+      <created>1708306014128</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708306014128</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: added version numbers back (for local crates)">
+      <option name="closed" value="true" />
+      <created>1708306108550</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1708306108550</updated>
+    </task>
+    <task id="LOCAL-00017" summary="chore: upgraded rdfox-sys to v0.0.3">
+      <option name="closed" value="true" />
+      <created>1708307222306</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708307222306</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: minor casting issue">
+      <option name="closed" value="true" />
+      <created>1708307665460</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708307665460</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: fixed mime dependency">
+      <option name="closed" value="true" />
+      <created>1708307841742</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708307841742</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: minor addition: `mandatory_env_var_static`">
+      <option name="closed" value="true" />
+      <created>1708613718366</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708613718366</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: made `Class` comparable and cloneable">
+      <option name="closed" value="true" />
+      <created>1709119840641</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709119840641</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="chore: intitial commit" />
+    <MESSAGE value="chore(version): 0.0.2" />
+    <MESSAGE value="chore: initial commit" />
+    <MESSAGE value="chore(version): 0.0.3" />
+    <MESSAGE value="chore(version): 0.0.4" />
+    <MESSAGE value="chore: preparing for publishing" />
+    <MESSAGE value="chore: merged features from rdf-store-rs" />
+    <MESSAGE value="chore: depending on rdftk crates now" />
+    <MESSAGE value="chore: minor changes" />
+    <MESSAGE value="refactor: massive refactor adding ekg-sparql crate" />
+    <MESSAGE value="refactor: massive refactor" />
+    <MESSAGE value="refactor: removed git reference for xlsxwriter" />
+    <MESSAGE value="refactor: removed version numbers for local crates" />
+    <MESSAGE value="refactor: changed the build order" />
+    <MESSAGE value="refactor: added version numbers back (for local crates)" />
+    <MESSAGE value="chore: upgraded rdfox-sys to v0.0.3" />
+    <MESSAGE value="fix: minor casting issue" />
+    <MESSAGE value="fix: fixed mime dependency" />
+    <MESSAGE value="feat: minor addition: `mandatory_env_var_static`" />
+    <MESSAGE value="feat: made `Class` comparable and cloneable" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: made `Class` comparable and cloneable" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

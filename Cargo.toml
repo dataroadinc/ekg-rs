@@ -20,7 +20,7 @@ description = "Various utility Rust crates for Enterprise Knowledge Graph (EKG) 
 version = "0.0.19"
 rust-version = "1.92.0"
 edition = "2024"
-authors = ["Jacobus Geluk <jacobus.geluk@ekgf.org>"]
+authors = ["Jacobus Geluk <jacobus.geluk@dataroad.com>"]
 publish = true
 license-file = "./LICENSE"
 
@@ -101,9 +101,9 @@ color-eyre = { version = "0.6.5", default-features = false, features = [
     "capture-spantrace",
     "track-caller",
 ] }
-colored = { version = "2.1.0", default-features = true }
+colored = { version = "3.0.0", default-features = true }
 tonic = { version = "0.14.2", features = ["tls-roots"] }
-owo-colors = { version = "4.0.0", features = ["supports-colors"] }
+owo-colors = { version = "4.2.3", features = ["supports-colors"] }
 #
 # Error handling
 #
@@ -116,7 +116,7 @@ simple-error = "0.3.0"
 getrandom = { version = "0.4.0-rc.0" }
 rand = "0.10.0-rc.6"
 # Use the following version of uuid to avoid a conflict with the version of uuid in rdftk
-uuid = { version = "1.7.0", features = [
+uuid = { version = "1.19.0", features = [
     "v4",
     "v5",
     "serde",
