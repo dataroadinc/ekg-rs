@@ -1,3 +1,13 @@
+[package]
+name = "ekg-rs-workspace"
+version = "0.0.19"
+edition = "2024"
+publish = false
+build = "build.rs"
+
+[build-dependencies]
+sloughi = { workspace = true }
+
 [workspace]
 members = ["crate/*"]
 resolver = "3"
@@ -252,3 +262,4 @@ chrono = { version = "0.4.42", features = ["serde"] }
 num_enum = "0.7.5"
 phf = { version = "0.13.1", features = ["macros"] }
 fancy-regex = { version = "0.17.0", default-features = true }
+sloughi = "0.3"
