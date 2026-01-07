@@ -5,3 +5,4 @@ Cargo.lock
 *.pdb
 .oxigraph/
 .tmp/
+.DS_Store
